@@ -1,80 +1,75 @@
-# 🎨 UAI Web Studio - Free AI Video & Image Generator
+# UAI Local Studio Pro 🤖✨
 
-UAI Web Studio is a modernized, 100% free web application for generating high-resolution AI images and animating them into motion videos in seconds.
+**UAI Local Studio Pro** is an all-in-one, 100% free web application combining **Google Omni-Style AI Video Generation**, **AI Image Generation**, **Multi-Turn AI Chat Assistant**, and an **Interactive Code Sandbox** (Python & Web Frontend).
 
-It runs completely free without requiring any paid API keys or expensive local GPU hardware. It is built to be deployed 100% free on public cloud platforms and monetized via ad networks like Google AdSense, PropellerAds, or custom sponsors.
-
----
-
-## ✨ Features
-
-- ⚡ **Ultra-Fast Free AI Image Generation**: High quality SDXL/Flux image generation in seconds.
-- 🎬 **Instant Neural Motion Video Generator**: Animates any static image into smooth MP4 motion clips without timing out or crashing on CPU.
-- 🎨 **Artistic Style Filters**: One-click filters for Cinematic, Anime, Cyberpunk, Fantasy, 3D Render, and Vintage looks.
-- 💡 **Quick Prompt Chips & Preset Ideas**: Built-in prompts to get started instantly.
-- 📜 **Session History & Gallery**: Save, preview, and download all generated images and videos during your session.
-- 💰 **Built-In Monetization**: Pre-configured responsive Ad banner slots for top header, sidebar, and footer.
-- 🚀 **Zero Cost Cloud Deployment**: Step-by-step instructions for hosting 100% free on Streamlit Community Cloud and Hugging Face Spaces.
+Designed for zero operational cost, high engagement, and maximum ad monetization profit.
 
 ---
 
-## 🛠️ Local Installation & Setup
+## 🌟 Key Features
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/your-username/UAI-Local-Studio.git
-   cd UAI-Local-Studio
-   ```
+1. **🎥 Google Omni-Style AI Video Generator**
+   - **Cinematic Motion Vectors:** 3D Dolly Zoom, Drone Orbit, Cinematic Zoom, Pan Left-to-Right Sweep, Cyber Morph, Pulsing Wave.
+   - **Aspect Ratio Controls:** 16:9 Landscape, 9:16 Portrait, 1:1 Square, 4:3 Standard.
+   - **Frame Rate & Speed:** 12–30 FPS with dynamic speed multiplier.
+   - **Instant Rendering:** Ultra-fast frame rendering engine running cleanly on standard free CPU servers.
 
-2. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+2. **🖼️ Fast Free Cloud AI Image Generator**
+   - High-definition image generation powered by keyless cloud inference (Flux & Turbo models).
+   - Style presets (Cinematic, Anime, Cyberpunk, High Fantasy, 3D Octane Render, Retro Vintage).
+   - Quick prompt idea chips and custom resolution options.
 
-3. **Run the application:**
-   ```bash
-   streamlit run app.py
-   ```
+3. **💬 AI Chat Assistant & Code Mentor**
+   - Multi-turn AI assistant for coding help, design advice, and general Q&A.
+   - Zero-cost fallback API architecture.
+
+4. **🐍 Interactive Code Execution Sandbox**
+   - **Python Sandbox:** Live code editor with stdout/stderr capture and instant template loading (Data Processing, Pillow Drawing, Math/Algorithms).
+   - **Frontend Web Sandbox:** Real-time HTML/CSS/JS live iframe browser preview.
+
+5. **💰 Built-in Ad Monetization & Pure Profit**
+   - Modular ad placement slots (`render_ad_banner`) in top header, sidebar, code sandbox, and footer.
+   - Designed for Google AdSense, PropellerAds, Ezoic, or custom sponsor banners.
+   - **$0.00 Server Fees = 100% Pure Profit from Ad Views & Clicks!**
 
 ---
 
-## 🌐 100% Free Cloud Deployment Guide
+## 🚀 How to Deploy 100% Free (Zero Hosting Fees)
 
-### Option 1: Deploy on Streamlit Community Cloud (Recommended - Free)
-
+### Method 1: Streamlit Community Cloud (Recommended)
 1. Push this repository to **GitHub**.
-2. Go to [share.streamlit.io](https://share.streamlit.io/) and log in with GitHub.
-3. Click **New app**, select your repository, branch (`main`), and set Main file path to `app.py`.
-4. Click **Deploy!** Your app will be live with an SSL HTTPS URL for free.
+2. Visit [share.streamlit.io](https://share.streamlit.io/) and log in with your GitHub account.
+3. Click **"New app"**.
+4. Select your repository, set the branch to `main`, and set **Main file path** to `app.py`.
+5. Click **Deploy!**
+6. Your app will be live 24/7 at `https://<your-app-name>.streamlit.app` completely **FREE**.
 
-### Option 2: Deploy on Hugging Face Spaces (Free)
-
-1. Go to [Hugging Face Spaces](https://huggingface.co/spaces) and click **Create new Space**.
-2. Name your Space and select **Streamlit** as the Space SDK.
-3. Choose **Public** and select the free CPU tier.
-4. Clone the space repository locally or upload `app.py`, `requirements.txt`, `.streamlit/config.toml`, and `README.md`.
-5. Push to Hugging Face. Your app will automatically build and launch!
+### Method 2: Hugging Face Spaces (Alternative Free Host)
+1. Go to [huggingface.co/spaces](https://huggingface.co/spaces) and click **"Create new Space"**.
+2. Select **Streamlit** as the Space SDK and choose the **CPU basic (Free)** hardware tier.
+3. Commit `app.py`, `requirements.txt`, and `.streamlit/config.toml` to your Space repo.
+4. Hugging Face will automatically build and host your web application worldwide for free!
 
 ---
 
-## 💰 How to Earn Money with Ads
+## 🛠️ Local Installation & Development
 
-The application includes modular Ad slots (`render_ad_banner`) in `app.py`.
+```bash
+# 1. Clone repo
+git clone https://github.com/your-username/uai-studio.git
+cd uai-studio
 
-1. **Register with an Ad Provider**:
-   - [Google AdSense](https://adsense.google.com/)
-   - [PropellerAds](https://propellerads.com/)
-   - [Ezoic](https://www.ezoic.com/)
-2. **Copy your Publisher Script / Ad Unit Code**.
-3. **Insert the code into `app.py`**:
-   Replace the placeholder HTML in `render_ad_banner()` inside `app.py` with your ad script or HTML iframe snippet:
-   ```python
-   # Example AdSense script insertion in app.py
-   components.html('''<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUB_ID" crossorigin="anonymous"></script>''', height=100)
-   ```
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Launch app
+streamlit run app.py
+```
+
+Open your browser at `http://localhost:8501`.
 
 ---
 
 ## 📄 License
 
-All Rights Reserved. Copyright (c) UAI Web Studio. All rights reserved.
+**All Rights Reserved.**
