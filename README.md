@@ -77,4 +77,4 @@ The application includes modular Ad slots (`render_ad_banner`) in `app.py`.
 
 ## 📄 License
 
-Distributed under the MIT License. Free for commercial and personal use.
+All Rights Reserved. Copyright (c) UAI Web Studio. All rights reserved.
