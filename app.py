@@ -48,6 +48,54 @@ code, kbd, pre, .stCodeBlock {
     color: #f8fafc;
 }
 
+/* Form Controls & Text Visibility Fixes */
+label, .stMarkdown label, [data-testid="stWidgetLabel"] {
+    color: #e2e8f0 !important;
+    font-weight: 600 !important;
+}
+
+.stTextInput input, .stTextArea textarea, .stNumberInput input {
+    background-color: #1e293b !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 10px !important;
+}
+
+.stTextInput input::placeholder, .stTextArea textarea::placeholder {
+    color: #94a3b8 !important;
+}
+
+/* BaseWeb Select Box & Dropdown Styling */
+div[data-baseweb="select"] {
+    background-color: #1e293b !important;
+    border-radius: 10px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+div[data-baseweb="select"] * {
+    color: #ffffff !important;
+    background-color: transparent !important;
+}
+
+ul[role="listbox"], [data-baseweb="popover"], [data-baseweb="menu"] {
+    background-color: #0f172a !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+ul[role="listbox"] li, [data-baseweb="menu"] * {
+    color: #f8fafc !important;
+    background-color: #0f172a !important;
+}
+
+ul[role="listbox"] li:hover, [data-baseweb="menu"] option:hover {
+    background-color: #334155 !important;
+    color: #38bdf8 !important;
+}
+
+div[class*="stSelectbox"] div[role="button"] {
+    color: #ffffff !important;
+}
+
 /* Card Container Glassmorphism */
 .css-card {
     background: rgba(30, 41, 59, 0.65);
@@ -204,6 +252,20 @@ def get_ram_info():
         return f"{total:.1f} GB Total | {available:.1f} GB Free"
     except Exception:
         return "System Active"
+
+def get_default_sample_image():
+    img = Image.new("RGB", (768, 432), color=(15, 23, 42))
+    from PIL import ImageDraw
+    draw = ImageDraw.Draw(img)
+    for i in range(432):
+        r = int(30 + (i / 432) * 120)
+        g = int(27 + (i / 432) * 40)
+        b = int(75 + (i / 432) * 150)
+        draw.line([(0, i), (768, i)], fill=(r, g, b))
+    draw.ellipse([284, 116, 484, 316], fill=(236, 72, 153))
+    draw.polygon([(100, 380), (384, 160), (668, 380)], fill=(30, 41, 59))
+    draw.polygon([(250, 380), (450, 220), (650, 380)], fill=(51, 65, 85))
+    return img
 
 # Optional Local Diffusers Engine
 @st.cache_resource(show_spinner=False)
@@ -570,6 +632,10 @@ with omni_tab:
             source_img_to_animate = Image.open(uploaded_file).convert("RGB")
         elif use_current and st.session_state.generated_image is not None:
             source_img_to_animate = st.session_state.generated_image
+        else:
+            sample_img = get_default_sample_image()
+            st.image(sample_img, caption="Default Sample Scene (or generate custom AI image in Tab 2)", use_container_width=True)
+            source_img_to_animate = sample_img
 
     with col_omni_opts:
         st.markdown("#### 2. Omni Camera Vector Configuration")
